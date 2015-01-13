@@ -42,34 +42,110 @@
 
 # sparky = GoodDog.new
 
-class GoodDog
+# class GoodDog
+#   attr_accessor :name, :height, :weight
 
-  attr_accessor :name
-  
-  def initialize(name)
-    @name = name
+#   def initialize(name, height, weight)
+#     @name = name
+#     @height = height
+#     @weight = weight
+#   end
+
+#   def speak
+#     "#{name} says Arf!"
+#   end
+
+#   def change_info(n, h, w)
+#     self.name = n 
+#     self.height = h
+#     self.weight = w
+#   end
+
+#   def info
+#     "#{name} weighs #{weight} and is #{height} tall"
+#   end
+
+#   def self.what_am_i
+#     "I'm a GoodDog class!"
+#   end
+# end
+
+# # sparky = GoodDog.new("Sparky", "12 inches", "10 lbs")
+# # puts sparky.info
+
+# # puts sparky.change_info("Spartacus", "24 inches", "45 lbs")
+# # puts sparky.info
+
+# puts GoodDog.what_am_i
+
+
+# Class Variable
+# class GoodDog
+
+#   @@number_of_dogs = 0
+
+#   def initialize
+#     @@number_of_dogs += 1
+#   end
+
+#   def self.total_number_of_dogs
+#     @@number_of_dogs
+#   end
+# end
+
+# puts GoodDog.total_number_of_dogs
+
+# dog1 = GoodDog.new
+# dog2 = GoodDog.new
+
+# puts GoodDog.total_number_of_dogs
+
+# Constants
+# class GoodDog
+#   DOG_YEARS = 7
+
+#   attr_accessor :name, :age
+
+#   def initialize(n, a)
+#     self.name = n
+#     self.age = a * DOG_YEARS
+#   end
+
+#   def to_s
+#     "This dog's name #{name} and it is #{age} in dog years"
+#   end
+# end
+
+# sparky = GoodDog.new("Sparky", 4)
+# puts sparky.age
+# puts sparky
+# p sparky
+
+
+# self
+class GoodDog
+  attr_accessor :name, :height, :weight
+
+  def initialize(n, h, w)
+    self.name = n
+    self.height = h
+    self.weight = w
   end
 
-  # def name
-  #   @name
-  # end
+  def change_info(n, h, w)
+    self.name = n
+    self.height = h 
+    slef.weight = w 
+  end
 
-  # def name=(n)
-  #   @name = n
-  # end
+  def info
+    "#{self.name} weighs #{self.weight} and is #{self.height} tall."
+  end
 
-  def speak
-    "#{@name} says arf!"
+  def what_is_self
+    self
   end
 end
 
-sparky = GoodDog.new("Sparky")
-puts sparky.speak
-puts sparky.name
-sparky.name = "Spartacus"
-sparky.name = "Spartacus"
-puts sparky.name
-
-
-fido = GoodDog.new("Fido")
-puts fido.speak
+sparky = GoodDog.new("Sparky", "12 inches", "10 lbs")
+p sparky.what_is_self
